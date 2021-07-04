@@ -34,8 +34,8 @@ def user_input_features_pop():
 
 #df_mode_0
 #df_mode_1
-mode = st.sidebar.selectbox('Mode',('Major','Minor'))
-if mode == 'Major':
+mode = st.sidebar.selectbox('Mode',('Minor','Major'))
+if mode == 'Minor':
     X = st.sidebar.selectbox('X',('Valence','Speechiness','Loudness','Energy','Duration (Ms)'))
     if X == 'Valence':
         Y = st.selectbar.selectbox('Y',('Loudness','Energy','Danceability'))
@@ -47,7 +47,7 @@ if mode == 'Major':
         Y = st.selectbar.selectbox('Loudness','Acousticness')
     if X == 'Duration (Ms)':
         Y == 'Year Released'
-if mode == 'Minor':
+if mode == 'Major':
     X = st.sidebar.selectbox('X',('Valence','Time Signature','Speechiness','Loudness','Energy','Duration (Ms)','Danceability'))
     if X == 'Valence':
         Y = st.selectbar.selectbox('Y',('Loudness','Energy'))
@@ -64,6 +64,5 @@ if mode == 'Minor':
     if X == 'Danceability':
         Y = st.selectbar.selectbox('Y',('Valence'))
 
-
-key = st.sidebar.selectbox('Key',())
-
+#df_key0
+key = st.sidebar.selectbox('Key',('C','C#','D','D#','E','F','F#','G','G#','A','A#','B'))
