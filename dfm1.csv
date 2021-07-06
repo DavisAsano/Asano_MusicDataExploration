@@ -1,0 +1,11 @@
+,,Mode 0/Major
+danceability,valence,0.361656519959746
+duration_ms,Year Released,-0.3412253828549607
+energy,acousticness,-0.5989240744230387
+energy,loudness,0.694245422864013
+instrumentalness,loudness,-0.3377386241794062
+loudness,acousticness,-0.3748462960644168
+speechiness,explicit,0.37759384556573417
+time_signature,instrumentalness,-0.3988541850619762
+valence,energy,0.4452559123066824
+valence,loudness,0.34251089797665984

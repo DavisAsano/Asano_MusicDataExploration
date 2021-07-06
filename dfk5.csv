@@ -1,0 +1,14 @@
+,,key5/F
+danceability,mode,-0.3043699974196047
+duration_ms,Year Released,-0.3182690717364043
+energy,acousticness,-0.3450036398942642
+energy,explicit,-0.3015042894940079
+energy,loudness,0.7191937874820735
+explicit,loudness,-0.3211682677429788
+explicit,mode,-0.33040146116413366
+mode,speechiness,-0.3639175905520546
+speechiness,explicit,0.38536194633002546
+time_signature,danceability,0.3441082737912618
+valence,danceability,0.48633385816529795
+valence,energy,0.4488802754835233
+valence,loudness,0.3003639587860526

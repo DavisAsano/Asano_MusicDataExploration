@@ -1,0 +1,11 @@
+,,Popularity 80+
+acousticness,energy,-0.5514855541066971
+duration_ms,Year Released,-0.3737499334290756
+energy,valence,0.44804112253580897
+explicit,danceability,0.29581155347142707
+explicit,speechiness,0.36668920706218117
+loudness,acousticness,-0.3672629443123543
+loudness,energy,0.6944910486728548
+loudness,instrumentalness,-0.2991262791539886
+valence,danceability,0.3778438874532716
+valence,loudness,0.34082423089895175

@@ -1,0 +1,9 @@
+,,Mode 0/Minor
+duration_ms,Year Released,-0.4424409087514309
+energy,acousticness,-0.45180957283487805
+energy,loudness,0.69251820966665
+loudness,acousticness,-0.3431927273373411
+speechiness,explicit,0.3401987679335879
+valence,danceability,0.40929330986870127
+valence,energy,0.45632872293954274
+valence,loudness,0.3414735138081908

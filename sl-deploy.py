@@ -38,31 +38,31 @@ mode = st.sidebar.selectbox('Mode',('Minor','Major'))
 if mode == 'Minor':
     X = st.sidebar.selectbox('X',('Valence','Speechiness','Loudness','Energy','Duration (Ms)'))
     if X == 'Valence':
-        Y = st.selectbar.selectbox('Y',('Loudness','Energy','Danceability'))
+        Y = st.sidebar.selectbox('Y',('Loudness','Energy','Danceability'))
     if X == 'Speechiness':
-        Y = st.selectbar.selectbox('Explicit')
+        Y = st.sidebar.selectbox('Explicit')
     if X == 'Loudness':
-        Y = st.selectbar.selectbox('Acousticness')
+        Y = st.sidebar.selectbox('Acousticness')
     if X == 'Energy':
-        Y = st.selectbar.selectbox('Loudness','Acousticness')
+        Y = st.sidebar.selectbox('Loudness','Acousticness')
     if X == 'Duration (Ms)':
         Y == 'Year Released'
 if mode == 'Major':
     X = st.sidebar.selectbox('X',('Valence','Time Signature','Speechiness','Loudness','Energy','Duration (Ms)','Danceability'))
     if X == 'Valence':
-        Y = st.selectbar.selectbox('Y',('Loudness','Energy'))
+        Y = st.sidebar.selectbox('Y',('Loudness','Energy'))
     if X == 'Time Signature':
-        Y = st.selectbar.selectbox('Y',('Instrumentalness'))
+        Y = st.sidebar.selectbox('Y',('Instrumentalness'))
     if X == 'Speechiness':
-        Y = st.selectbar.selectbox('Y',('Explicit'))
+        Y = st.sidebar.selectbox('Y',('Explicit'))
     if X == 'Loudness':
-        Y = st.selectbar.selectbox('Y',('Acousticness'))
+        Y = st.sidebar.selectbox('Y',('Acousticness'))
     if X == 'Energy':
-        Y = st.selectbar.selectbox('Y',('Loudness','Acousticness'))
+        Y = st.sidebar.selectbox('Y',('Loudness','Acousticness'))
     if X == 'Duration (Ms)':
-        Y = st.selectbar.selectbox('Y',('Year Released'))
+        Y = st.sidebar.selectbox('Y',('Year Released'))
     if X == 'Danceability':
-        Y = st.selectbar.selectbox('Y',('Valence'))
+        Y = st.sidebar.selectbox('Y',('Valence'))
 
 #df_key0
 key = st.sidebar.selectbox('Key',('C','C#','D','D#','E','F','F#','G','G#','A','A#','B'))
