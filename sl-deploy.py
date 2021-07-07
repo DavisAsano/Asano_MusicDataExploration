@@ -3,19 +3,14 @@
 
 import streamlit as st
 import pandas as pd
-import numpy as np
 import glob
+import matplotlib.pyplot as plt
+import seaborn as sns 
+import os
 
 #### Read in CSVs ####
 path = r'C:\Users\dasan\Documents\GitHub\Music_Data_Asano' #Read multiple CSV by pattern matching
-all_files = glob.glob(path +"/*.csv")
-li = []
 
-for filename in all_files:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    li.append(df)
-
-frame = pd.concat(li, axis=0, ignore_index=True)
 st.write("""
 # A Music Data Exploration App
 
@@ -29,26 +24,37 @@ st.sidebar.header('User Input Parameters')
 # "duration_ms","explicit","danceability","energy","loudness","speechiness","acousticness","instrumentalness","liveness","valence","tempo","time_signature"
 
 mode = st.sidebar.selectbox('Mode',('All','Minor','Major'))
-key = st.sidebar.selectbox('Key',('C','C#','D','D#','E','F','F#','G','G#','A','A#','B'))
+key = st.sidebar.selectbox('Key',('All','C','C#','D','D#','E','F','F#','G','G#','A','A#','B'))
 
 
 
-#df_mode_0
-#df_mode_1
+#dfm1k0.csv = mode 1 key 0
+#dfp.csv = popular
+#dfk0.csv = key 0
+#dfm1.csv = mode 1
+
+#Popular unfiltered
+dfp = pd.read_csv('dfp.csv')
 if mode == 'All':
-    X = st.sidebar.selectbox('X',('Valence', 'Loudness', 'Explicit', 'Energy', 'Duration (Ms)', 'Acousticness'))
-    if X == 'Valence':
-        Y = st.sidebar.selectbox('Y',('Loudness','Danceability'))
-    if X == 'Loudness':
-        Y = st.sidebar.selectbox('Y',('Instrumentalness','Energy','Acousticness'))
-    if X == 'Explicit':
-        Y = st.sidebar.selectbox('Y',('Speechiness','Danceability'))
-    if X == 'Energy':
-        Y = st.sidebar.selectbox('Y',('Valence'))
-    if X == 'Duration (Ms)':
+    X = st.sidebar.selectbox('X',('valence', 'loudness', 'explicit', 'energy', 'duration_ms', 'acousticness'))
+    if X == 'valence':
+        Y = st.sidebar.selectbox('Y',('loudness','danceability'))
+        sns.regplot(x=dfp['valence'],y=dfc['duration_ms'])
+    if X == 'loudness':
+        Y = st.sidebar.selectbox('Y',('instrumentalness','energy','acousticness'))
+        sns.regplot(x=dfp[X],y=dfp[Y])
+    if X == 'explicit':
+        Y = st.sidebar.selectbox('Y',('speechiness','danceability'))
+        sns.regplot(x=dfp[X],y=dfp[Y])
+    if X == 'energy':
+        Y = st.sidebar.selectbox('Y',('valence'))
+        sns.regplot(x=dfp[X],y=dfp[Y])
+    if X == 'duration_ms':
         Y = st.sidebar.selectbox('Y',('Year Released'))
-    if X == 'Acousticness':
-        Y = st.sidebar.selectbox('Y'('Energy'))
+        sns.regplot(x=dfp[X],y=dfp[Y])
+    if X == 'acousticness':
+        Y = st.sidebar.selectbox('Y'('energy'))
+        sns.regplot(x=dfp[X],y=dfp[Y])
 
 if mode == 'Minor':
     X = st.sidebar.selectbox('X',('Valence','Speechiness','Loudness','Energy','Duration (Ms)'))

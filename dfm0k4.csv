@@ -1,0 +1,18 @@
+,,key4/E
+acousticness,Year Released,0.3054618193786644
+acousticness,energy,-0.5317089396226233
+danceability,speechiness,0.4277198864636335
+duration_ms,Year Released,-0.573021521137706
+duration_ms,popularity,-0.3953098881920773
+duration_ms,time_signature,-0.4465269340845264
+energy,Year Released,-0.3025419921294042
+energy,loudness,0.7940956650607046
+explicit,danceability,0.35856304506569486
+loudness,acousticness,-0.46535989969508595
+popularity,Year Released,0.3554968682403321
+popularity,loudness,-0.3644879565445224
+speechiness,valence,0.40162230893878503
+time_signature,Year Released,0.4108800535921239
+valence,danceability,0.3599392950439582
+valence,energy,0.5172529152814158
+valence,loudness,0.5374099549624954

@@ -1,0 +1,32 @@
+,,key3/D#
+Year Released,duration_ms,-0.658818216986001
+Year Released,energy,-0.5947881789202806
+acousticness,Year Released,0.32889845907357274
+acousticness,duration_ms,-0.31198505038387203
+danceability,acousticness,-0.5826987692529825
+danceability,energy,-0.692461722713033
+danceability,explicit,0.35700981887230343
+duration_ms,instrumentalness,0.35155047678295875
+energy,explicit,-0.5431357498689074
+energy,liveness,0.3730289998265913
+energy,valence,0.41562464013037426
+explicit,Year Released,0.34233224754483255
+explicit,loudness,-0.6356433557860494
+explicit,popularity,0.31686212526223845
+instrumentalness,explicit,-0.3570553756496309
+liveness,acousticness,0.5909101119445161
+liveness,danceability,-0.553017553262041
+liveness,tempo,-0.35446187217902536
+loudness,energy,0.4793707072117437
+loudness,popularity,-0.4116989108927735
+loudness,speechiness,-0.6742872656980591
+loudness,valence,0.6206468977768961
+popularity,acousticness,-0.36734200965569735
+popularity,duration_ms,-0.5470171229217219
+speechiness,duration_ms,-0.5262659723995425
+speechiness,energy,-0.32621471570150107
+speechiness,explicit,0.7572031953473112
+speechiness,instrumentalness,-0.35486992446407867
+speechiness,popularity,0.5777083913681171
+tempo,energy,0.38972738738572027
+tempo,popularity,0.3789707800036195

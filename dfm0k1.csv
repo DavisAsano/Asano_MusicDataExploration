@@ -1,0 +1,16 @@
+,,key1/C#
+Year Released,duration_ms,-0.40921241629235444
+Year Released,explicit,0.3460875364925506
+acousticness,energy,-0.5161307713353491
+danceability,explicit,0.3656418865900716
+danceability,valence,0.5085328704417321
+energy,speechiness,-0.41127854885111553
+instrumentalness,acousticness,0.3024591001647689
+instrumentalness,danceability,-0.34439531854774197
+instrumentalness,time_signature,0.6984966306950601
+loudness,acousticness,-0.4219335130897845
+loudness,energy,0.6954270136041452
+loudness,speechiness,-0.3956176682500362
+speechiness,explicit,0.3595468363926859
+time_signature,danceability,-0.4193338360714418
+valence,energy,0.5437471173913491
