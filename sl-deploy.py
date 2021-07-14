@@ -28,6 +28,8 @@ key = st.sidebar.selectbox('Key',('All','C','C#','D','D#','E','F','F#','G','G#',
 
 
 
+
+
 #dfm1k0.csv = mode 1 key 0
 #dfp.csv = popular
 #dfk0.csv = key 0
@@ -39,7 +41,7 @@ if mode == 'All':
     X = st.sidebar.selectbox('X',('valence', 'loudness', 'explicit', 'energy', 'duration_ms', 'acousticness'))
     if X == 'valence':
         Y = st.sidebar.selectbox('Y',('loudness','danceability'))
-        sns.regplot(x=dfp['valence'],y=dfc['duration_ms'])
+        dfm0k11.plot.barh()
     if X == 'loudness':
         Y = st.sidebar.selectbox('Y',('instrumentalness','energy','acousticness'))
         sns.regplot(x=dfp[X],y=dfp[Y])
