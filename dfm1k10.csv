@@ -1,19 +1,7 @@
 ,,key10/A#
 acousticness,energy,-0.6171298288793957
 acousticness,loudness,-0.5840196209465109
-acousticness,valence,-0.3327202632187739
-danceability,energy,0.316300800555013
-danceability,explicit,0.43334554810587445
-danceability,speechiness,0.4178795121246794
 duration_ms,Year Released,-0.634870833653881
-duration_ms,valence,-0.3307962127243666
 energy,valence,0.601842588077525
-loudness,Year Released,0.3589954529142089
 loudness,energy,0.6803345042255687
 speechiness,explicit,0.5924474550257048
-tempo,time_signature,-0.3172819690693514
-time_signature,acousticness,-0.3707604352151657
-time_signature,danceability,0.3307528698506201
-time_signature,energy,0.3032783856869423
-valence,danceability,0.3296026162615335
-valence,loudness,0.33711284938869046

@@ -1,19 +1,3 @@
 ,,key0/C
-acousticness,speechiness,0.4866065108167676
-danceability,Year Released,0.3046380727304113
-danceability,speechiness,0.40772306901160993
-duration_ms,Year Released,-0.4540225967272531
-duration_ms,popularity,-0.32389747276336
-energy,explicit,-0.36735468789348885
-explicit,Year Released,0.32291068689449903
 explicit,danceability,0.5754691782255068
-liveness,Year Released,-0.305042372981226
 loudness,energy,0.8063852188042303
-loudness,explicit,-0.38340836009529133
-popularity,explicit,0.30741871019807954
-tempo,danceability,0.3028298824240186
-time_signature,danceability,0.4596300675411934
-time_signature,energy,0.37285436059332244
-valence,danceability,0.3000106856285922
-valence,energy,0.4168675451633909
-valence,liveness,0.3111677466894971

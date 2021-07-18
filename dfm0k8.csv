@@ -1,23 +1,5 @@
 ,,key8/G#
 acousticness,liveness,0.5076791871496262
-acousticness,popularity,0.4629892005584986
-danceability,energy,-0.352755770888108
-danceability,explicit,0.3798591334404247
-duration_ms,Year Released,-0.3438780934601532
-energy,liveness,-0.41017851852489406
-energy,valence,0.46552416988615336
-explicit,energy,-0.4204549061454405
 instrumentalness,loudness,-0.5137996251047119
-instrumentalness,speechiness,0.32190765899442864
-instrumentalness,tempo,-0.31224749132641344
 loudness,energy,0.7668225914154021
-loudness,explicit,-0.3252701066857769
-loudness,liveness,-0.43678082837007987
-loudness,valence,0.38892175366033366
-popularity,duration_ms,-0.3610164665659096
-popularity,explicit,-0.30182490214788216
-popularity,liveness,0.3531478138106078
-speechiness,energy,-0.3977969381689316
-speechiness,explicit,0.32839681201913656
-speechiness,loudness,-0.42891413708905657
 tempo,danceability,-0.5582908404608199

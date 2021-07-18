@@ -1,38 +1,15 @@
 ,,key2/D
-Year Released,energy,-0.477417563136811
 Year Released,liveness,-0.7587760020860075
-acousticness,energy,0.34096399755472984
-acousticness,explicit,-0.4690329356239216
 danceability,duration_ms,-0.6020058563561949
 danceability,explicit,0.5414768775338921
-danceability,popularity,-0.30637185886474794
-danceability,speechiness,0.3119053259634699
-duration_ms,Year Released,-0.38404855399503596
-duration_ms,acousticness,-0.36192553015660833
-duration_ms,energy,0.4514083268617174
-duration_ms,tempo,0.46986652079037494
-energy,instrumentalness,0.4547955693462288
 energy,liveness,0.5337027826422128
 energy,valence,0.5149003177036788
-explicit,Year Released,0.3567530340063411
-explicit,energy,-0.4882185322318197
 explicit,loudness,-0.5524667655696853
 explicit,speechiness,0.574420405872379
-instrumentalness,loudness,0.48029552059017594
 liveness,duration_ms,0.5879462785629029
-liveness,loudness,0.40155623436579907
-liveness,valence,-0.35935264362253017
-loudness,acousticness,0.49593847192482704
 loudness,energy,0.7176328906249279
-loudness,valence,0.3457253439628814
 popularity,energy,-0.512911892165367
-popularity,instrumentalness,-0.4559833243433446
 popularity,liveness,-0.5680748098926874
 popularity,tempo,0.5297941555233003
-speechiness,liveness,-0.48811252305989933
-tempo,acousticness,0.3302804388312427
 tempo,danceability,-0.9192489358006141
 tempo,explicit,-0.5661166902645591
-valence,acousticness,0.49704565620261426
-valence,danceability,0.3187108242695622
-valence,speechiness,0.4343767328436774

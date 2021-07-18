@@ -1,18 +1,5 @@
 ,,key11/B
 Year Released,duration_ms,-0.5150153484520467
-acousticness,valence,-0.35269462386915
 danceability,valence,0.664858483684245
-energy,acousticness,-0.43111970208086936
-energy,explicit,-0.3574983954081146
 energy,loudness,0.60962518049736
-energy,valence,0.39564733716398004
-explicit,danceability,0.3615016147420963
-explicit,duration_ms,-0.4407973302490313
 explicit,speechiness,0.675084676918443
-instrumentalness,popularity,0.33144122362656325
-popularity,tempo,-0.3476309668487221
-speechiness,danceability,0.30683931751174937
-speechiness,duration_ms,-0.3781328326075291
-speechiness,tempo,0.41166326771776285
-speechiness,valence,0.4129257071584434
-tempo,time_signature,-0.42669870177966424

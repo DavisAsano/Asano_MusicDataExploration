@@ -1,29 +1,8 @@
 ,,key11/B
-Year Released,acousticness,0.3011286234418907
-Year Released,danceability,0.4064034262781474
-Year Released,energy,-0.3839131923809372
-Year Released,instrumentalness,-0.4024357146816593
 acousticness,energy,-0.6733952821879058
-acousticness,speechiness,-0.39311856351388424
-acousticness,tempo,-0.3939591358754928
 danceability,duration_ms,-0.5593066608852434
-danceability,instrumentalness,-0.3065807756134185
-danceability,valence,0.3373827994712606
 duration_ms,Year Released,-0.599037931275812
 duration_ms,instrumentalness,0.7611896369558973
 energy,loudness,0.6904987889576215
-energy,speechiness,0.3586924377480787
 explicit,speechiness,0.6012760960426128
-instrumentalness,loudness,-0.37259034772836674
-liveness,speechiness,0.36436284777583927
-liveness,time_signature,0.3017315123801654
-speechiness,loudness,0.30897571263847495
-speechiness,tempo,0.40606444705709394
-speechiness,time_signature,0.47384328277076065
 speechiness,valence,0.541550648380962
-tempo,energy,0.46930120199445585
-tempo,explicit,0.3237309683989939
-tempo,loudness,0.38994119080100303
-valence,energy,0.48374806607157067
-valence,explicit,0.3079315605950176
-valence,loudness,0.4068325040767605

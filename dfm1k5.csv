@@ -1,13 +1,5 @@
 ,,key5/F
-Year Released,duration_ms,-0.38481263055477005
-acousticness,energy,-0.3949748904312192
-energy,liveness,0.3204149037319419
 instrumentalness,time_signature,-0.5157082418697173
-liveness,Year Released,-0.3175560871572048
-liveness,instrumentalness,0.37055417554943
 loudness,energy,0.7465535514436347
-speechiness,tempo,0.3205831845201609
-tempo,acousticness,-0.36053553647462266
 time_signature,danceability,0.5482120510347848
 valence,danceability,0.5809108574649715
-valence,energy,0.4021659178352719

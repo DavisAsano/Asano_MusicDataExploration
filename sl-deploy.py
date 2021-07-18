@@ -934,4 +934,666 @@ if mode == 'Minor':
             if Y == 'loudness':
                 sns.regplot(x=m0corr['valence'],y=m0corr['loudness'])
                 st.pyplot()  
-#if mode == 'Major':
+### m0k0 ###
+    if key == 'C':
+        X = st.sidebar.selectbox('X',('explicit','loudness'))
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m0k0['explicit'],y=m0k0['danceability'])
+                st.pyplot()  
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k0['loudness'],y=m0k0['energy'])    
+                st.pyplot()  
+### m0k1 ###      
+    if key == 'C#':
+        X = st.sidebar.selectbox('X',('acousticness','loudness','valence'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k1['acousticness'],y=m0k1['energy'])
+                st.pyplot()  
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k1['valence'],y=m0k1['energy']) 
+                st.pyplot()  
+### m0k2 ###      
+    if key == 'D':
+        X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('liveness',''))
+            if Y == 'liveness':
+                sns.regplot(x=m0k2['Year Released'],y=m0k2['liveness'])
+                st.pyplot()  
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('duration_ms','explicit'))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k2['danceability'],y=m0k2['duration_ms']) 
+                st.pyplot()  
+            if Y == 'explicit':
+                sns.regplot(x=m0k2['danceability'],y=m0k2['explicit']) 
+                st.pyplot()  
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('liveness','valence'))
+            if Y == 'liveness':
+                sns.regplot(x=m0k2['energy'],y=m0k2['liveness']) 
+                st.pyplot()  
+            if Y == 'valence':
+                sns.regplot(x=m0k2['energy'],y=m0k2['valence']) 
+                st.pyplot()  
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('loudness','speechiness'))
+            if Y == 'loudness':
+                sns.regplot(x=m0k2['explicit'],y=m0k2['loudness']) 
+                st.pyplot()  
+            if Y == 'speechiness':
+                sns.regplot(x=m0k2['explicit'],y=m0k2['speechiness']) 
+                st.pyplot()  
+        if X == 'liveness':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k2['liveness'],y=m0k2['duration_ms']) 
+                st.pyplot()  
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k2['loudness'],y=m0k2['energy']) 
+                st.pyplot()  
+        if X == 'popularity':
+            Y = st.sidebar.selectbox('Y',('energy','liveness'))
+            if Y == 'energy':
+                sns.regplot(x=m0k2['popularity'],y=m0k2['energy']) 
+                st.pyplot()  
+            if Y == 'liveness':
+                sns.regplot(x=m0k2['popularity'],y=m0k2['liveness']) 
+                st.pyplot() 
+        if X == 'tempo':
+            Y = st.sidebar.selectbox('Y',('danceability','explicit'))
+            if Y == 'danceability':
+                sns.regplot(x=m0k2['tempo'],y=m0k2['danceability']) 
+                st.pyplot()  
+            if Y == 'explicit':
+                sns.regplot(x=m0k2['tempo'],y=m0k2['explicit']) 
+                st.pyplot()  
+### m0k3 ###      
+    if key == 'D#':
+        X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit','liveness','loudness','popularity','speechiness'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('duration_ms','energy'))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k3['Year Released'],y=m0k3['duration_ms'])
+                st.pyplot()  
+            if Y == 'energy':
+                sns.regplot(x=m0k3['Year Released'],y=m0k3['energy'])
+                st.pyplot() 
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('acousticness','energy'))
+            if Y == 'acousticness':
+                sns.regplot(x=m0k3['danceability'],y=m0k3['acousticness'])
+                st.pyplot()    
+            if Y == 'energy':
+                sns.regplot(x=m0k3['danceability'],y=m0k3['energy'])
+                st.pyplot() 
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('explicit',''))
+            if Y == 'explicit':
+                sns.regplot(x=m0k3['energy'],y=m0k3['explicit'])
+                st.pyplot()   
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k3['explicit'],y=m0k3['loudness'])
+                st.pyplot()    
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('acousticness','danceability'))
+            if Y == 'acousticness':
+                sns.regplot(x=m0k3['liveness'],y=m0k3['acousticness'])
+                st.pyplot()    
+            if Y == 'danceability':
+                sns.regplot(x=m0k3['liveness'],y=m0k3['danceability'])
+                st.pyplot()  
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('speechiness','valence'))
+            if Y == 'speechiness':
+                sns.regplot(x=m0k3['loudness'],y=m0k3['speechiness'])
+                st.pyplot()    
+            if Y == 'valence':
+                sns.regplot(x=m0k3['loudness'],y=m0k3['valence'])
+                st.pyplot() 
+        if X == 'popularity':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k3['popularity'],y=m0k3['duration_ms'])
+                st.pyplot()   
+        if X == 'speechiness':
+            Y = st.sidebar.selectbox('Y',('duration_ms','explicit'))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k3['speechiness'],y=m0k3['duration_ms'])
+                st.pyplot()    
+            if Y == 'explicit':
+                sns.regplot(x=m0k3['speechiness'],y=m0k3['explicit'])
+                st.pyplot()     
+            if Y == 'popularity':
+                sns.regplot(x=m0k3['speechiness'],y=m0k3['popularity'])
+                st.pyplot()     
+### m0k4 ###      
+    if key == 'E':
+        X = st.sidebar.selectbox('X',('acousticness','duration_ms','energy','valence'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k4['acousticness'],y=m0k4['energy'])
+                st.pyplot() 
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
+            if Y == 'Year Released':
+                sns.regplot(x=m0k4['duration_ms'],y=m0k4['Year Released'])
+                st.pyplot()  
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k4['energy'],y=m0k4['loudness'])
+                st.pyplot() 
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('energy','loudness'))
+            if Y == 'energy':
+                sns.regplot(x=m0k4['valence'],y=m0k4['energy'])
+                st.pyplot() 
+            if Y == 'loudness':
+                sns.regplot(x=m0k4['valence'],y=m0k4['loudness'])
+                st.pyplot() 
+### m0k5 ###      
+    if key == 'F':
+        X = st.sidebar.selectbox('X',('energy','time_signature','valence'))
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k5['energy'],y=m0k5['loudness'])
+                st.pyplot() 
+        if X == 'time_signature':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m0k5['time_signature'],y=m0k5['acousticness'])
+                st.pyplot() 
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k5['valence'],y=m0k5['energy'])
+                st.pyplot() 
+### m0k6 ###      
+    if key == 'F':
+        X = st.sidebar.selectbox('X',('energy',''))
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness','loudness','valence'))
+            if Y == 'acousticness':
+                sns.regplot(x=m0k6['energy'],y=m0k6['acousticness'])
+                st.pyplot() 
+            if Y == 'loudness':
+                sns.regplot(x=m0k6['energy'],y=m0k6['loudness'])
+                st.pyplot() 
+            if Y == 'valence':
+                sns.regplot(x=m0k6['energy'],y=m0k6['valence'])
+                st.pyplot() 
+### m0k7 ###      
+    if key == 'F':
+        X = st.sidebar.selectbox('X',('energy','valence'))
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k7['energy'],y=m0k7['loudness'])
+                st.pyplot() 
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m0k7['valence'],y=m0k7['danceability'])
+                st.pyplot() 
+### m0k8 ###      
+    if key == 'F':
+        X = st.sidebar.selectbox('X',('acousticness','instrumentalness','loudness','tempo'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('liveness',''))
+            if Y == 'liveness':
+                sns.regplot(x=m0k8['acousticness'],y=m0k8['liveness'])
+                st.pyplot() 
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k8['instrumentalness'],y=m0k8['loudness'])
+                st.pyplot() 
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m0k8['loudness'],y=m0k8['energy'])
+                st.pyplot() 
+        if X == 'tempo':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m0k8['tempo'],y=m0k8['danceability'])
+                st.pyplot() 
+### m0k9 ###      
+    if key == 'A':
+        X = st.sidebar.selectbox('X',('Year Released','acousticness','loudness','speechiness','tempo','time_signature'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k9['Year Released'],y=m0k9['duration_ms'])
+                st.pyplot() 
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('loudness','time_signature'))
+            if Y == 'loudness':
+                sns.regplot(x=m0k9['acousticness'],y=m0k9['loudness'])
+                st.pyplot() 
+            if Y == 'time_signature':
+                sns.regplot(x=m0k9['acousticness'],y=m0k9['time_signature'])
+                st.pyplot() 
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness','loudness'))
+            if Y == 'acousticness':
+                sns.regplot(x=m0k9['energy'],y=m0k9['acousticness'])
+                st.pyplot() 
+            if Y == 'loudness':
+                sns.regplot(x=m0k9['energy'],y=m0k9['loudness'])
+                st.pyplot() 
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('time_signature',''))
+            if Y == 'time_signature':
+                sns.regplot(x=m0k9['loudness'],y=m0k9['time_signature'])
+                st.pyplot() 
+        if X == 'speechiness':
+            Y = st.sidebar.selectbox('Y',('time_signature',''))
+            if Y == 'time_signature':
+                sns.regplot(x=m0k9['loudness'],y=m0k9['time_signature'])
+                st.pyplot() 
+        if X == 'tempo':
+            Y = st.sidebar.selectbox('Y',('explicit','time_signature'))
+            if Y == 'explicit':
+                sns.regplot(x=m0k9['tempo'],y=m0k9['explicit'])
+                st.pyplot() 
+            if Y == 'time_signature':
+                sns.regplot(x=m0k9['tempo'],y=m0k9['time_signature'])
+                st.pyplot() 
+        if X == 'time_signature':
+            Y = st.sidebar.selectbox('Y',('explicit','danceability'))
+            if Y == 'danceability':
+                sns.regplot(x=m0k9['time_signature'],y=m0k9['danceability'])
+                st.pyplot() 
+### m0k10 ###      
+    if key == 'A#':
+        X = st.sidebar.selectbox('X',('Year Released','acousticness','energy'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k10['Year Released'],y=m0k10['duration_ms'])
+                st.pyplot()
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k10['acousticness'],y=m0k10['energy'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m0k10['energy'],y=m0k10['valence'])
+                st.pyplot()
+### m0k11 ###      
+    if key == 'B':
+        X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m0k11['Year Released'],y=m0k11['duration_ms'])
+                st.pyplot()
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m0k11['danceability'],y=m0k11['valence'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m0k11['energy'],y=m0k11['loudness'])
+                st.pyplot()
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('speechiness',''))
+            if Y == 'speechiness':
+                sns.regplot(x=m0k11['explicit'],y=m0k11['speechiness'])
+                st.pyplot()
+
+### m1 ###
+if mode == 'Major':
+    if key == 'All':
+        X = st.sidebar.selectbox('X',('danceability','duration_ms','energy','instrumentalness','loudness','speechiness','time_signature','valence'))
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m1corr['danceability'],y=m1corr['valence'])
+                st.pyplot()
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
+            if Y == 'Year Released':
+                sns.regplot(x=m1corr['duration_ms'],y=m1corr['Year Released'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness','loudness'))
+            if Y == 'acousticness':
+                sns.regplot(x=m1corr['energy'],y=m1corr['acousticness'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1corr['energy'],y=m1corr['loudness'])
+                st.pyplot()
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m1corr['instrumentalness'],y=m1corr['loudness'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m1corr['loudness'],y=m1corr['acousticness'])
+                st.pyplot()
+        if X == 'speechiness':
+            Y = st.sidebar.selectbox('Y',('explicit',''))
+            if Y == 'explicit':
+                sns.regplot(x=m1corr['speechiness'],y=m1corr['explicit'])
+                st.pyplot()
+        if X == 'time_signature':
+            Y = st.sidebar.selectbox('Y',('instrumentalness',''))
+            if Y == 'instrumentalness':
+                sns.regplot(x=m1corr['time_signature'],y=m1corr['instrumentalness'])
+                st.pyplot()
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('energy','loudness'))
+            if Y == 'energy':
+                sns.regplot(x=m1corr['valence'],y=m1corr['energy'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1corr['valence'],y=m1corr['loudness'])
+                st.pyplot()
+### m1k0 ###      
+    if key == 'C':
+        X = st.sidebar.selectbox('X',('acousticness','energy','loudness'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k0['acousticness'],y=m1k0['energy'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m1k0['energy'],y=m1k0['loudness'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k0['loudness'],y=m1k0['acousticness'])
+                st.pyplot()
+### m1k1 ###      
+    if key == 'C#':
+        X = st.sidebar.selectbox('X',('energy',''))
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness','loudness'))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k1['energy'],y=m1k1['acousticness'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1k1['energy'],y=m1k1['loudness'])
+                st.pyplot()
+### m1k2 ###      
+    if key == 'D':
+        X = st.sidebar.selectbox('X',('acousticness','loudness'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k2['acousticness'],y=m1k2['energy'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k2['loudness'],y=m1k2['energy'])
+                st.pyplot()    
+### m1k3 ###      
+    if key == 'D#':
+        X = st.sidebar.selectbox('X',('Year Released','danceability','duration_ms','energy','instrumentalness','loudness'))
+        if X == 'Year Released':
+            Y = st.sidebar.selectbox('Y',('popularity',''))
+            if Y == 'popularity':
+                sns.regplot(x=m1k3['Year Released'],y=m1k3['popularity'])
+                st.pyplot()
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m1k3['danceability'],y=m1k3['valence'])
+                st.pyplot()
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('danceability','loudness','valence'))
+            if Y == 'danceability':
+                sns.regplot(x=m1k3['duration_ms'],y=m1k3['danceability'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1k3['duration_ms'],y=m1k3['loudness'])
+                st.pyplot()
+            if Y == 'valence':
+                sns.regplot(x=m1k3['duration_ms'],y=m1k3['valence'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k3['energy'],y=m1k3['acousticness'])
+                st.pyplot()
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('explicit',''))
+            if Y == 'explicit':
+                sns.regplot(x=m1k3['instrumentalness'],y=m1k3['explicit'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k3['loudness'],y=m1k3['energy'])
+                st.pyplot()
+### m1k4 ###      
+    if key == 'E':
+        X = st.sidebar.selectbox('X',('duration_ms','energy','duration_ms','loudness','valence'))
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
+            if Y == 'Year Released':
+                sns.regplot(x=m1k4['duration_ms'],y=m1k4['Year Released'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k4['energy'],y=m1k4['acousticness'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('acousticness','energy'))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k4['loudness'],y=m1k4['acousticness'])
+                st.pyplot()
+            if Y == 'energy':
+                sns.regplot(x=m1k4['loudness'],y=m1k4['energy'])
+                st.pyplot()
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('danceability','energy'))
+            if Y == 'danceability':
+                sns.regplot(x=m1k4['valence'],y=m1k4['danceability'])
+                st.pyplot()
+            if Y == 'energy':
+                sns.regplot(x=m1k4['valence'],y=m1k4['energy'])
+                st.pyplot()
+### m1k5 ###      
+    if key == 'F':
+        X = st.sidebar.selectbox('X',('instrumentalness','loudness','time_signature','valence'))
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('time_signature',''))
+            if Y == 'time_signature':
+                sns.regplot(x=m1k5['instrumentalness'],y=m1k5['time_signature'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k5['loudness'],y=m1k5['energy'])
+                st.pyplot()
+        if X == 'time_signature':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m1k5['time_signature'],y=m1k5['danceability'])
+                st.pyplot()
+        if X == 'valence':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m1k5['valence'],y=m1k5['danceability'])
+                st.pyplot()
+### m1k6 ###      
+    if key == 'F#':
+        X = st.sidebar.selectbox('X',('energy','instrumentalness','loudness'))
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('acousticness',''))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k6['energy'],y=m1k6['acousticness'])
+                st.pyplot()
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
+            if Y == 'Year Released':
+                sns.regplot(x=m1k6['instrumentalness'],y=m1k6['Year Released'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('acousticness','energy'))
+            if Y == 'acousticness':
+                sns.regplot(x=m1k6['loudness'],y=m1k6['acousticness'])
+                st.pyplot()
+            if Y == 'energy':
+                sns.regplot(x=m1k6['loudness'],y=m1k6['energy'])
+                st.pyplot()
+### m1k7 ###      
+    if key == 'G':
+        X = st.sidebar.selectbox('X',('loudness',''))
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k7['loudness'],y=m1k7['energy'])
+                st.pyplot()
+### m1k8 ###      
+    if key == 'G#':
+        X = st.sidebar.selectbox('X',('danceability','energy','explicit','instrumentalness','loudness','tempo','time_signature'))
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('speechiness','time_signature'))
+            if Y == 'speechiness':
+                sns.regplot(x=m1k8['danceability'],y=m1k8['speechiness'])
+                st.pyplot()
+            if Y == 'time_signature':
+                sns.regplot(x=m1k8['danceability'],y=m1k8['time_signature'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('instrumentalness','loudness','valence'))
+            if Y == 'instrumentalness':
+                sns.regplot(x=m1k8['energy'],y=m1k8['instrumentalness'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1k8['energy'],y=m1k8['loudness'])
+                st.pyplot() 
+            if Y == 'valence':
+                sns.regplot(x=m1k8['energy'],y=m1k8['valence'])
+                st.pyplot()     
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('danceability',''))
+            if Y == 'danceability':
+                sns.regplot(x=m1k8['explicit'],y=m1k8['danceability'])
+                st.pyplot()
+        if X == 'instrumentalness':
+            Y = st.sidebar.selectbox('Y',('danceability','time_signature'))
+            if Y == 'danceability':
+                sns.regplot(x=m1k8['instrumentalness'],y=m1k8['danceability'])
+                st.pyplot()
+            if Y == 'time_signature':
+                sns.regplot(x=m1k8['instrumentalness'],y=m1k8['time_signature'])
+                st.pyplot() 
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('instrumentalness','loudness'))
+            if Y == 'instrumentalness':
+                sns.regplot(x=m1k8['loudness'],y=m1k8['instrumentalness'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1k8['loudness'],y=m1k8['loudness'])
+                st.pyplot() 
+        if X == 'time_signature':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m1k8['time_signature'],y=m1k8['loudness'])
+                st.pyplot()
+### m1k9 ###      
+    if key == 'A':
+        X = st.sidebar.selectbox('X',('loudness',''))
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k9['loudness'],y=m1k9['energy'])
+                st.pyplot()
+### m1k10 ###      
+    if key == 'A#':
+        X = st.sidebar.selectbox('X',('acousticness','duration_ms','energy','loudness','speechiness'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy','loudness'))
+            if Y == 'energy':
+                sns.regplot(x=m1k10['acousticness'],y=m1k10['energy'])
+                st.pyplot()
+            if Y == 'loudness':
+                sns.regplot(x=m1k10['acousticness'],y=m1k10['loudness'])
+                st.pyplot()
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
+            if Y == 'Year Released':
+                sns.regplot(x=m1k10['duration_ms'],y=m1k10['Year Released'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m1k10['energy'],y=m1k10['valence'])
+                st.pyplot()
+        if X == 'loudness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k10['loudness'],y=m1k10['energy'])
+                st.pyplot()
+        if X == 'speechiness':
+            Y = st.sidebar.selectbox('Y',('explicit',''))
+            if Y == 'explicit':
+                sns.regplot(x=m1k10['speechiness'],y=m1k10['explicit'])
+                st.pyplot()
+### m1k11 ###      
+    if key == 'A#':
+        X = st.sidebar.selectbox('X',('acousticness','danceability','duration_ms','energy','explicit','speechiness'))
+        if X == 'acousticness':
+            Y = st.sidebar.selectbox('Y',('energy',''))
+            if Y == 'energy':
+                sns.regplot(x=m1k11['acousticness'],y=m1k11['energy'])
+                st.pyplot()
+        if X == 'danceability':
+            Y = st.sidebar.selectbox('Y',('duration_ms',''))
+            if Y == 'duration_ms':
+                sns.regplot(x=m1k11['danceability'],y=m1k11['duration_ms'])
+                st.pyplot()
+        if X == 'duration_ms':
+            Y = st.sidebar.selectbox('Y',('Year Released','instrumentalness'))
+            if Y == 'Year Released':
+                sns.regplot(x=m1k11['duration_ms'],y=m1k11['Year Released'])
+                st.pyplot()
+            if Y == 'instrumentalness':
+                sns.regplot(x=m1k11['duration_ms'],y=m1k11['instrumentalness'])
+                st.pyplot()
+        if X == 'energy':
+            Y = st.sidebar.selectbox('Y',('loudness',''))
+            if Y == 'loudness':
+                sns.regplot(x=m1k11['energy'],y=m1k11['loudness'])
+                st.pyplot()
+        if X == 'explicit':
+            Y = st.sidebar.selectbox('Y',('speechiness',''))
+            if Y == 'speechiness':
+                sns.regplot(x=m1k11['explicit'],y=m1k11['speechiness'])
+                st.pyplot()
+        if X == 'speechiness':
+            Y = st.sidebar.selectbox('Y',('valence',''))
+            if Y == 'valence':
+                sns.regplot(x=m1k11['speechiness'],y=m1k11['valence'])
+                st.pyplot()

@@ -1,12 +1,3 @@
 ,,key1/C#
-acousticness,time_signature,-0.3339780878518023
-duration_ms,Year Released,-0.39087592409483163
 energy,acousticness,-0.6206074702476859
 energy,loudness,0.6390860606456614
-explicit,speechiness,0.43864732742683865
-liveness,energy,0.3094745911202533
-loudness,acousticness,-0.4649448116395581
-loudness,time_signature,0.3276949137936483
-speechiness,danceability,0.31547563066153267
-time_signature,energy,0.331272343933388
-valence,danceability,0.3732264499528176

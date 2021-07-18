@@ -1,13 +1,4 @@
 ,,key10/A#
 Year Released,duration_ms,-0.519219451520584
 acousticness,energy,-0.5233936370604005
-danceability,popularity,0.3084682110247017
-energy,time_signature,0.3544322129236758
 energy,valence,0.5901705575087728
-explicit,popularity,0.33658617124370505
-loudness,acousticness,-0.3903843382760349
-loudness,energy,0.471322725357846
-speechiness,explicit,0.3642627636054931
-tempo,Year Released,0.440442121202692
-tempo,acousticness,0.36202099998612886
-time_signature,acousticness,-0.46753905897934883

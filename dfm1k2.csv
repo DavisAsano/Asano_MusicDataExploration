@@ -1,11 +1,3 @@
 ,,key2/D
-Year Released,duration_ms,-0.366339157799235
 acousticness,energy,-0.5868573868317516
-explicit,speechiness,0.48519190038371207
-loudness,Year Released,0.31109213537135016
 loudness,energy,0.7316180846680411
-loudness,instrumentalness,-0.3568330591062732
-loudness,valence,0.47290468586849677
-time_signature,instrumentalness,-0.375939444505968
-valence,energy,0.45334234293293135
-valence,instrumentalness,-0.316329295494191

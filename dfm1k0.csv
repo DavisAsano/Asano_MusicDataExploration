@@ -1,8 +1,4 @@
 ,,key0/C
 acousticness,energy,-0.6748541144937729
-danceability,valence,0.4131598216061821
 energy,loudness,0.778535722386638
-energy,valence,0.47376021009199504
 loudness,acousticness,-0.5736159531742157
-speechiness,explicit,0.3404403549988895
-valence,loudness,0.3612696224426636

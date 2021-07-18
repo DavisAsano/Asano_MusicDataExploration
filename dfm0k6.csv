@@ -1,16 +1,4 @@
 ,,key6/F#
-Year Released,duration_ms,-0.47395310943344743
-acousticness,loudness,-0.44585881052215803
-acousticness,valence,-0.34020372315033987
-danceability,valence,0.34013484363333
 energy,acousticness,-0.6741926376092776
-energy,instrumentalness,-0.4519937518886807
 energy,loudness,0.6915138771410103
 energy,valence,0.5925440266082327
-explicit,energy,-0.33957284957690387
-explicit,speechiness,0.4630535918583616
-instrumentalness,acousticness,0.4355777933815368
-liveness,explicit,0.373617115722926
-loudness,instrumentalness,-0.48760823602710296
-tempo,speechiness,0.3802527803165381
-valence,loudness,0.4253572500914899
