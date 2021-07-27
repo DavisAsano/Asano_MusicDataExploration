@@ -9,8 +9,7 @@ import seaborn as sns
 import os
 import numpy as np
 from scipy import stats
-import zipfile
-
+import csv
 
 #####
 ## df > dfp --- plot all correlations for keys and modes by themselves
@@ -18,20 +17,9 @@ import zipfile
 ## mo/m1 > m0k0/m1k0 --- plot all correlations for keys in modes
 #####
 
-with zipfile.ZipFile()
+# Read in all CSV 
+df = pd.read_csv("tracks.csv", index_col=None, header=0)
 
-
-
-# Read in all CSV files
-path = r'C:\Users\dasan\Desktop\Repo\Music_Data_Asano' #Read multiple CSV by pattern matching
-all_files = glob.glob(path +"/*.csv")
-li = []
-
-for filename in all_files:
-    df = pd.read_csv(filename, index_col=None, header=0)
-    li.append(df)
-
-frame = pd.concat(li, axis=0, ignore_index=True)
 
 # Use release_date to create Year Released column with only int(year)
 df["Year Released"] = pd.to_datetime(df['release_date'])
