@@ -10,12 +10,21 @@ import os
 import numpy as np
 from scipy import stats
 import csv
+import zipfile
 
 #####
 ## df > dfp --- plot all correlations for keys and modes by themselves
 ## dfp > m0/m1 --- plot all correlations for modes
 ## mo/m1 > m0k0/m1k0 --- plot all correlations for keys in modes
 #####
+
+# if track.csv does not exists, unzip it from tracks.csv.zip
+# (Make sure to put tracks.csv into .gitignore!)
+if glob.glob("tracks.csv") == []:
+    zf = zipfile.ZipFile('tracks.csv.zip','r')
+    #print(zf.infolist())
+    r = zf.extract("tracks.csv")
+    print("Extracted tracks.csv.zip into", r)
 
 # Read in all CSV 
 df = pd.read_csv("tracks.csv", index_col=None, header=0)
