@@ -1,5 +1,5 @@
-#take CSVs and guidelines from ipynb and apply them in streamlit
-#NOTE: Label all with correlations that arent significant or are
+# Streamlit GUI for Music Data Correlation Exploration
+# TO LAUNCH: streamlit run main.py
 
 import streamlit as st
 import pandas as pd
@@ -12,21 +12,15 @@ from scipy import stats
 import csv
 import zipfile
 
-#####
-## df > dfp --- plot all correlations for keys and modes by themselves
-## dfp > m0/m1 --- plot all correlations for modes
-## mo/m1 > m0k0/m1k0 --- plot all correlations for keys in modes
-#####
 
-# if track.csv does not exists, unzip it from tracks.csv.zip
-# (Make sure to put tracks.csv into .gitignore!)
+# take in ZIP file for tracks.csv and unzip
 if glob.glob("tracks.csv") == []:
     zf = zipfile.ZipFile('tracks.csv.zip','r')
     #print(zf.infolist())
     r = zf.extract("tracks.csv")
     print("Extracted tracks.csv.zip into", r)
 
-# Read in all CSV 
+# Read in tracks.csv 
 df = pd.read_csv("tracks.csv", index_col=None, header=0)
 
 
@@ -37,6 +31,7 @@ df["Year Released"] = df["Year Released"].dt.year
 ### Popularity filter ###
 # Filter dataframe to only songs with a popularity score 80+
 df_popular = df[df['popularity'] >= 80]
+# dfpcorr to do correlations on df_popular
 dfpcorr = df_popular
 # Filter popular dataframe by key
 pk0 = df_popular[df_popular['key'] == 0]
@@ -55,6 +50,7 @@ pk11 = df_popular[df_popular['key'] == 11]
 ### Mode and Key filters ###
 # Filter popular dataframe to mode 0 
 m0 = df_popular[df_popular['mode'] == 0]
+# m0corr to do correlations on m0
 m0corr = m0
 #Filter mode0 dataframe by key
 m0k0 = m0[m0['key'] == 0]
@@ -71,6 +67,7 @@ m0k10 = m0[m0['key'] == 10]
 m0k11 = m0[m0['key'] == 11]
 # Filter popular dataframe to mode 1
 m1 = df_popular[df_popular['mode'] == 1]
+# m1corr to do correlations on m1
 m1corr = m1
 # Filter mode1 dataframe by key
 m1k0 = m1[m1['key'] == 0]
@@ -86,9 +83,11 @@ m1k9 = m1[m1['key'] == 9]
 m1k10 = m1[m1['key'] == 10]
 m1k11 = m1[m1['key'] == 11]
 
-col1,col2 = st.beta_columns(2)
+# Title Text
 st.title('Relationships in Music Data (1960-2020)')
+# Subheader Text
 st.subheader("This app lets you explore different correlations in popular songs (popularity rating of 80+).")
+# Bullet Point Text 
 st.write("""
 * Only relationships with a significant Correlation Coefficent may be selected
 ** r > 0.30  r < -0.30 **
@@ -97,24 +96,33 @@ st.write("""
 ###
 
 
-
+# Sidebar Label
 st.sidebar.header('User Input Parameters')
 
-#Need to define input and base Y off X using dfp dataframe // Plot X by Y corr
-#Add mode default to all & same with key
-# "duration_ms","explicit","danceability","energy","loudness","speechiness","acousticness","instrumentalness","liveness","valence","tempo","time_signature"
-
-# Remove error message
+# Remove error message from Streamlit + Pyplot
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+# Mode Selection
 mode = st.sidebar.selectbox('Mode',('All','Minor','Major'))
+# Key Selection
 key = st.sidebar.selectbox('Key',('All','C','C#','D','D#','E','F','F#','G','G#','A','A#','B'))
 
-#Popular unfiltered // All = dfpcorr & by key = pk0
+
+
+### Process as follows:
+# Choose Mode, Choose Key 
+# Based on Mode and Key display X options with significant correlations
+# Based on X option show Y options that lead to significant correlations
+
+# Mode All
+# dfpcorr
 if mode == 'All': 
+    # Key All
     if key == 'All':
+        # X options with significant correlations
         X = st.sidebar.selectbox('X',('valence', 'loudness', 'explicit', 'energy', 'duration_ms', 'acousticness'))
         if X == 'valence':
+            # Y options with Significant Correlations to Valence
             Y = st.sidebar.selectbox('Y',('loudness','danceability'))
             if Y == 'loudness':
                 sns.regplot(x=dfpcorr['valence'],y=dfpcorr['loudness'])
@@ -156,7 +164,7 @@ if mode == 'All':
             if Y == 'energy':
                 sns.regplot(x=dfpcorr['acousticness'],y=dfpcorr['energy'])
                 st.pyplot()
-## pk0 /// Mode all + key C/0 ### CONTAINS EMPTY CHOICES
+## pk0 /// Mode all + key C/0 
     if key == 'C':
         X = st.sidebar.selectbox('X',('Year Released', 'danceability', 'energy', 'loudness'))
         if X == 'Year Released':
@@ -188,7 +196,7 @@ if mode == 'All':
             if Y == 'valence':
                 sns.regplot(x=pk0['loudness'],y=pk0['energy'])
                 st.pyplot()
-### pk1 ### CONTAINS EMPTY CHOICES
+### pk1 /// Mode All + key C#
     if key == 'C#':
         X = st.sidebar.selectbox('X',('acousticness', 'duration_ms', 'energy', 'explicit','loudness','valence'))
         if X == 'acousticness':
@@ -224,7 +232,7 @@ if mode == 'All':
             if Y == 'energy':
                 sns.regplot(x=pk1['valence'],y=pk1['energy'])
                 st.pyplot()
-### pk2 ###
+### pk2 Mode all + key D
     if key == 'D':
         X = st.sidebar.selectbox('X',('Year Released', 'duration_ms', 'energy', 'explicit','instrumentalness','loudness','valence'))
         if X == 'Year Released':
@@ -271,7 +279,7 @@ if mode == 'All':
             if Y == 'loudness':
                 sns.regplot(x=pk2['valence'],y=pk2['loudness'])
                 st.pyplot()
-    ### pk3 ###
+    ### pk3 Mode all + Key D#
     if key == 'D#':
             X = st.sidebar.selectbox('X',('Year Released', 'danceability', 'duration_ms', 'energy','explicit','loudness','mode','popularity','speechiness','valence'))
             if X == 'Year Released':
@@ -372,7 +380,7 @@ if mode == 'All':
                 if Y == 'mode':
                     sns.regplot(x=pk3['valence'],y=pk3['mode']) 
                     st.pyplot()  
-    ### pk4 ###
+    ### pk4 Mode all + Key E
     if key == 'E':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness', 'danceability', 'duration_ms','energy','loudness','popularity','valence'))
             if X == 'Year Released':
@@ -431,7 +439,7 @@ if mode == 'All':
                     sns.regplot(x=pk4['valence'],y=pk4['energy'])
                     st.pyplot()
 
-    ### pk5 ###
+    ### pk5 Mode all + Key F
     if key == 'F':
             X = st.sidebar.selectbox('X',('danceability', 'duration_ms', 'energy', 'explicit','mode','speechiness','time_signature','valence'))
             if X == 'danceability':
@@ -489,7 +497,7 @@ if mode == 'All':
                 if Y == 'loudness':
                     sns.regplot(x=pk5['valence'],y=pk5['loudness'])
                     st.pyplot()
-    ### pk6 ###
+    ### pk6 Mode all + Key F#
     if key == 'F#':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness', 'duration_ms', 'energy','explicit','loudness','valence'))
             if X == 'Year Released':
@@ -542,7 +550,7 @@ if mode == 'All':
                 if Y == 'loudness':
                     sns.regplot(x=pk6['valence'],y=pk6['loudness'])
                     st.pyplot()
-    ### pk7 ###
+    ### pk7 Mode all + Key G
     if key == 'G':
             X = st.sidebar.selectbox('X',('Year Released', 'danceability', 'duration_ms', 'energy','explicit','loudness','mode','speechiness','valence'))
             if X == 'Year Released':
@@ -643,7 +651,7 @@ if mode == 'All':
                 if Y == 'mode':
                     sns.regplot(x=pk7['valence'],y=pk7['mode'])
                     st.pyplot()
-    ### pk8 ###
+    ### pk8 Mode all + Key G#
     if key == 'G#':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness','danceability', 'energy','explicit', 'instrumentalness','loudness','speechiness','tempo','time_signature','valence'))
             if X == 'Year Released':
@@ -743,7 +751,7 @@ if mode == 'All':
                 if Y == 'loudness':
                     sns.regplot(x=pk8['valence'],y=pk8['loudness'])
                     st.pyplot()
-    ### pk9 ###
+    ### pk9 Mode all + Key A
     if key == 'A':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness','energy', 'loudness','valence'))
             if X == 'Year Released':
@@ -780,7 +788,7 @@ if mode == 'All':
                 if Y == 'energy':
                     sns.regplot(x=pk9['valence'],y=pk9['energy'])
                     st.pyplot()
-    ### pk10 ###
+    ### pk10 Mode all + Key A#
     if key == 'A#':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness','danceability', 'energy','explicit','loudness','mode','valence'))
             if X == 'Year Released':
@@ -840,7 +848,7 @@ if mode == 'All':
                 if Y == 'loudness':
                     sns.regplot(x=pk10['valence'],y=pk10['loudness'])
                     st.pyplot()
-    ### pk11 ###
+    ### pk11 Mode all + Key B
     if key == 'B':
             X = st.sidebar.selectbox('X',('Year Released', 'acousticness','danceability', 'duration_ms','energy','loudness','speechiness','tempo','time_signature','valence'))
             if X == 'Year Released':
@@ -910,7 +918,7 @@ if mode == 'All':
                     st.pyplot()
 
 
-### m0 ###
+### m0 Mode Minor + Key All
 if mode == 'Minor':
     if key == 'All':
         X = st.sidebar.selectbox('X',('duration_ms','energy','loudness','speechiness','valence'))
@@ -943,7 +951,7 @@ if mode == 'Minor':
             if Y == 'loudness':
                 sns.regplot(x=m0corr['valence'],y=m0corr['loudness'])
                 st.pyplot()  
-### m0k0 ###
+### m0k0 Mode Minor + Key C
     if key == 'C':
         X = st.sidebar.selectbox('X',('explicit','loudness'))
         if X == 'explicit':
@@ -956,7 +964,7 @@ if mode == 'Minor':
             if Y == 'energy':
                 sns.regplot(x=m0k0['loudness'],y=m0k0['energy'])    
                 st.pyplot()  
-### m0k1 ###      
+### m0k1 Mode Minor + Key C#      
     if key == 'C#':
         X = st.sidebar.selectbox('X',('acousticness','loudness','valence'))
         if X == 'acousticness':
@@ -969,7 +977,7 @@ if mode == 'Minor':
             if Y == 'energy':
                 sns.regplot(x=m0k1['valence'],y=m0k1['energy']) 
                 st.pyplot()  
-### m0k2 ###      
+### m0k2 Mode Minor + Key D      
     if key == 'D':
         X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit'))
         if X == 'Year Released':
@@ -1027,7 +1035,7 @@ if mode == 'Minor':
             if Y == 'explicit':
                 sns.regplot(x=m0k2['tempo'],y=m0k2['explicit']) 
                 st.pyplot()  
-### m0k3 ###      
+### m0k3 Mode Minor + Key D#      
     if key == 'D#':
         X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit','liveness','loudness','popularity','speechiness'))
         if X == 'Year Released':
@@ -1088,7 +1096,7 @@ if mode == 'Minor':
             if Y == 'popularity':
                 sns.regplot(x=m0k3['speechiness'],y=m0k3['popularity'])
                 st.pyplot()     
-### m0k4 ###      
+### m0k4 Mode Minor + Key E      
     if key == 'E':
         X = st.sidebar.selectbox('X',('acousticness','duration_ms','energy','valence'))
         if X == 'acousticness':
@@ -1114,7 +1122,7 @@ if mode == 'Minor':
             if Y == 'loudness':
                 sns.regplot(x=m0k4['valence'],y=m0k4['loudness'])
                 st.pyplot() 
-### m0k5 ###      
+### m0k5 Mode Minor + Key F      
     if key == 'F':
         X = st.sidebar.selectbox('X',('energy','time_signature','valence'))
         if X == 'energy':
@@ -1132,8 +1140,8 @@ if mode == 'Minor':
             if Y == 'energy':
                 sns.regplot(x=m0k5['valence'],y=m0k5['energy'])
                 st.pyplot() 
-### m0k6 ###      
-    if key == 'F':
+### m0k6 Mode Minor + Key F#      
+    if key == 'F#':
         X = st.sidebar.selectbox('X',('energy',''))
         if X == 'energy':
             Y = st.sidebar.selectbox('Y',('acousticness','loudness','valence'))
@@ -1146,8 +1154,8 @@ if mode == 'Minor':
             if Y == 'valence':
                 sns.regplot(x=m0k6['energy'],y=m0k6['valence'])
                 st.pyplot() 
-### m0k7 ###      
-    if key == 'F':
+### m0k7 Mode Minor + Key G      
+    if key == 'G':
         X = st.sidebar.selectbox('X',('energy','valence'))
         if X == 'energy':
             Y = st.sidebar.selectbox('Y',('loudness',''))
@@ -1159,8 +1167,8 @@ if mode == 'Minor':
             if Y == 'danceability':
                 sns.regplot(x=m0k7['valence'],y=m0k7['danceability'])
                 st.pyplot() 
-### m0k8 ###      
-    if key == 'F':
+### m0k8 Mode Minor + Key G#      
+    if key == 'G#':
         X = st.sidebar.selectbox('X',('acousticness','instrumentalness','loudness','tempo'))
         if X == 'acousticness':
             Y = st.sidebar.selectbox('Y',('liveness',''))
@@ -1182,7 +1190,7 @@ if mode == 'Minor':
             if Y == 'danceability':
                 sns.regplot(x=m0k8['tempo'],y=m0k8['danceability'])
                 st.pyplot() 
-### m0k9 ###      
+### m0k9 Mode Minor + Key A      
     if key == 'A':
         X = st.sidebar.selectbox('X',('Year Released','acousticness','loudness','speechiness','tempo','time_signature'))
         if X == 'Year Released':
@@ -1229,7 +1237,7 @@ if mode == 'Minor':
             if Y == 'danceability':
                 sns.regplot(x=m0k9['time_signature'],y=m0k9['danceability'])
                 st.pyplot() 
-### m0k10 ###      
+### m0k10 Mode Minor + Key A#      
     if key == 'A#':
         X = st.sidebar.selectbox('X',('Year Released','acousticness','energy'))
         if X == 'Year Released':
@@ -1247,7 +1255,7 @@ if mode == 'Minor':
             if Y == 'valence':
                 sns.regplot(x=m0k10['energy'],y=m0k10['valence'])
                 st.pyplot()
-### m0k11 ###      
+### m0k11 Mode Minor + Key B      
     if key == 'B':
         X = st.sidebar.selectbox('X',('Year Released','danceability','energy','explicit'))
         if X == 'Year Released':
@@ -1271,7 +1279,7 @@ if mode == 'Minor':
                 sns.regplot(x=m0k11['explicit'],y=m0k11['speechiness'])
                 st.pyplot()
 
-### m1 ###
+### m1 Mode Major + Key All
 if mode == 'Major':
     if key == 'All':
         X = st.sidebar.selectbox('X',('danceability','duration_ms','energy','instrumentalness','loudness','speechiness','time_signature','valence'))
@@ -1321,7 +1329,7 @@ if mode == 'Major':
             if Y == 'loudness':
                 sns.regplot(x=m1corr['valence'],y=m1corr['loudness'])
                 st.pyplot()
-### m1k0 ###      
+### m1k0 Mode Major + Key C      
     if key == 'C':
         X = st.sidebar.selectbox('X',('acousticness','energy','loudness'))
         if X == 'acousticness':
@@ -1339,7 +1347,7 @@ if mode == 'Major':
             if Y == 'acousticness':
                 sns.regplot(x=m1k0['loudness'],y=m1k0['acousticness'])
                 st.pyplot()
-### m1k1 ###      
+### m1k1 Mode Major + Key C#      
     if key == 'C#':
         X = st.sidebar.selectbox('X',('energy',''))
         if X == 'energy':
@@ -1350,7 +1358,7 @@ if mode == 'Major':
             if Y == 'loudness':
                 sns.regplot(x=m1k1['energy'],y=m1k1['loudness'])
                 st.pyplot()
-### m1k2 ###      
+### m1k2 Mode Major + Key D      
     if key == 'D':
         X = st.sidebar.selectbox('X',('acousticness','loudness'))
         if X == 'acousticness':
@@ -1363,7 +1371,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k2['loudness'],y=m1k2['energy'])
                 st.pyplot()    
-### m1k3 ###      
+### m1k3 Mode Major + Key D#      
     if key == 'D#':
         X = st.sidebar.selectbox('X',('Year Released','danceability','duration_ms','energy','instrumentalness','loudness'))
         if X == 'Year Released':
@@ -1402,7 +1410,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k3['loudness'],y=m1k3['energy'])
                 st.pyplot()
-### m1k4 ###      
+### m1k4 Mode Major + Key E      
     if key == 'E':
         X = st.sidebar.selectbox('X',('duration_ms','energy','duration_ms','loudness','valence'))
         if X == 'duration_ms':
@@ -1431,7 +1439,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k4['valence'],y=m1k4['energy'])
                 st.pyplot()
-### m1k5 ###      
+### m1k5 Mode Major + Key F      
     if key == 'F':
         X = st.sidebar.selectbox('X',('instrumentalness','loudness','time_signature','valence'))
         if X == 'instrumentalness':
@@ -1454,7 +1462,7 @@ if mode == 'Major':
             if Y == 'danceability':
                 sns.regplot(x=m1k5['valence'],y=m1k5['danceability'])
                 st.pyplot()
-### m1k6 ###      
+### m1k6 Mode Major + Key F#      
     if key == 'F#':
         X = st.sidebar.selectbox('X',('energy','instrumentalness','loudness'))
         if X == 'energy':
@@ -1475,7 +1483,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k6['loudness'],y=m1k6['energy'])
                 st.pyplot()
-### m1k7 ###      
+### m1k7 Mode Major + Key G      
     if key == 'G':
         X = st.sidebar.selectbox('X',('loudness',''))
         if X == 'loudness':
@@ -1483,7 +1491,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k7['loudness'],y=m1k7['energy'])
                 st.pyplot()
-### m1k8 ###      
+### m1k8 Mode Major + Key G#      
     if key == 'G#':
         X = st.sidebar.selectbox('X',('danceability','energy','explicit','instrumentalness','loudness','tempo','time_signature'))
         if X == 'danceability':
@@ -1531,7 +1539,7 @@ if mode == 'Major':
             if Y == 'loudness':
                 sns.regplot(x=m1k8['time_signature'],y=m1k8['loudness'])
                 st.pyplot()
-### m1k9 ###      
+### m1k9 Mode Major + Key A      
     if key == 'A':
         X = st.sidebar.selectbox('X',('loudness',''))
         if X == 'loudness':
@@ -1539,7 +1547,7 @@ if mode == 'Major':
             if Y == 'energy':
                 sns.regplot(x=m1k9['loudness'],y=m1k9['energy'])
                 st.pyplot()
-### m1k10 ###      
+### m1k10 Mode Major + Key A#      
     if key == 'A#':
         X = st.sidebar.selectbox('X',('acousticness','duration_ms','energy','loudness','speechiness'))
         if X == 'acousticness':
@@ -1570,7 +1578,7 @@ if mode == 'Major':
             if Y == 'explicit':
                 sns.regplot(x=m1k10['speechiness'],y=m1k10['explicit'])
                 st.pyplot()
-### m1k11 ###      
+### m1k11 Mode Major + Key B      
     if key == 'B':
         X = st.sidebar.selectbox('X',('acousticness','danceability','duration_ms','energy','explicit','speechiness'))
         if X == 'acousticness':
