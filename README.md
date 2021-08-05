@@ -3,7 +3,7 @@ A Music Data Correlation Application built using Jupyter Notebook and deployed u
 Using this application you can explore correlations between the data that makes up popular songs
 - Popular songs are rated 80+ out of 100 in popularity
 - All correlations supplied have been deemed significant (P value +/- 0.3 or more)
-- Data set @ https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks
+- Data set @ https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks (tracks.csv.zip)
 <img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/graph.png">
 
 
