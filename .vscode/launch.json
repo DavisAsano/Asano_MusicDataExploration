@@ -18,7 +18,7 @@
             "program": "C:\\Users\\dasan\\miniconda3\\Scripts\\streamlit.exe",  // /home/xx/tmp/venv/bin/streamlit",
             "args": [
                 "run",
-                "sl-deploy.py"
+                "main.py"
             ]
         }
     ]
