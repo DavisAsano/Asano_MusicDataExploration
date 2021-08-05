@@ -13,23 +13,26 @@ import zipfile
 # take in ZIP file for tracks.csv and unzip
 if glob.glob("tracks.csv") == []:
     zf = zipfile.ZipFile('tracks.csv.zip','r')
-    #print(zf.infolist())
     r = zf.extract("tracks.csv")
     print("Extracted tracks.csv.zip into", r)
 
 # Read in tracks.csv 
 df = pd.read_csv("tracks.csv", index_col=None, header=0)
 
-
 # Use release_date to create Year Released column with only int(year)
 df["Year Released"] = pd.to_datetime(df['release_date'])
 df["Year Released"] = df["Year Released"].dt.year
 
+
 ### Popularity filter ###
 # Filter dataframe to only songs with a popularity score 80+
 df_popular = df[df['popularity'] >= 80]
+
+
 # dfpcorr to do correlations on df_popular
 dfpcorr = df_popular
+
+
 # Filter popular dataframe by key
 pk0 = df_popular[df_popular['key'] == 0]
 pk1 = df_popular[df_popular['key'] == 1]
@@ -47,8 +50,10 @@ pk11 = df_popular[df_popular['key'] == 11]
 ### Mode and Key filters ###
 # Filter popular dataframe to mode 0 
 m0 = df_popular[df_popular['mode'] == 0]
+
 # m0corr to do correlations on m0
 m0corr = m0
+
 #Filter mode0 dataframe by key
 m0k0 = m0[m0['key'] == 0]
 m0k1 = m0[m0['key'] == 1]
@@ -62,10 +67,14 @@ m0k8 = m0[m0['key'] == 8]
 m0k9 = m0[m0['key'] == 9]
 m0k10 = m0[m0['key'] == 10]
 m0k11 = m0[m0['key'] == 11]
+
+
 # Filter popular dataframe to mode 1
 m1 = df_popular[df_popular['mode'] == 1]
+
 # m1corr to do correlations on m1
 m1corr = m1
+
 # Filter mode1 dataframe by key
 m1k0 = m1[m1['key'] == 0]
 m1k1 = m1[m1['key'] == 1]
