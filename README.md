@@ -7,18 +7,26 @@ Using this application you can explore correlations between the data that makes 
 <img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/graph.png">
 
 
-
 ## Installation
 
 This application deploys via Streamlit to download Streamlit:
 
 <img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/pip-streamlit.png">
 
+To graph correlations this application uses Seaborn. To download Seaborn:
+
+<img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/seaborn.png">
 ## How to use
 
 To start up this app type this command into the terminal:
 <img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/sl.png">
 
 Modifying the "User Input Parameter" on the left side of the screen will automatically adjust the graph.
-The parameters are depended on each other. Meaning modifying Mode or Key will adjust what X values are available to you.
+The parameters are dependant on each other. Meaning modifying Mode or Key will adjust what X values are available to you.
 Changing the X value will modify what Y values are available. 
+
+## CSV Value Details / Music Data Values
+<img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/data.png">
+
+## License
+The Patters in Popular Songs application is licensed under the terms of the MIT license and is available for free.
