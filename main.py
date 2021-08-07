@@ -156,12 +156,12 @@ if mode == 'All':
                 sns.regplot(x=dfpcorr['explicit'],y=dfpcorr['danceability'])
                 st.pyplot()
         if X == 'energy':
-            Y = st.sidebar.selectbox('Y',('valence'))
+            Y = st.sidebar.selectbox('Y',('valence', ''))
             if Y == 'valence':
                 sns.regplot(x=dfpcorr['energy'],y=dfpcorr['valence'])
                 st.pyplot()
         if X == 'duration_ms':
-            Y = st.sidebar.selectbox('Y',('Year Released'))
+            Y = st.sidebar.selectbox('Y',('Year Released',''))
             if Y == 'Year Released':
                 sns.regplot(x=dfpcorr['duration_ms'],y=dfpcorr['Year Released'])
                 st.pyplot()
