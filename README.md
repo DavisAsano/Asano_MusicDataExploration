@@ -16,6 +16,7 @@ This application deploys via Streamlit to download Streamlit:
 To graph correlations this application uses Seaborn. To download Seaborn:
 
 <img src="https://github.com/DavisAsano/Patterns-in-Popular-Songs/blob/main/images/seaborn.png">
+
 ## How to use
 
 To start up this app type this command into the terminal:
